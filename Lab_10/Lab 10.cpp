@@ -18,7 +18,7 @@ using namespace std;
  *  - Конструктор по умолчанию удалить
  *  - Определить protected конструктор MatrixBase(unsigned int iSize), задающий размер матрицы
  *  - Определить приватное поле const unsigned int m_size, в котором хранится размерность матрицы
- *  - Метод unsigned int size() const возвращающий размерность матрицы
+ *  - Метод unsigned int dimension() const возвращающий размерность матрицы
  *  - Абстрактный метод int element(unsigned int i, unsigned int j) const возвращающий элемент матрицы
  *  - Абстрактный метод int& element(unsigned int i, unsigned int j) возвращающий ссылку на элемент матрицы
  *  - перегрузить void operator*=(int iMult) умножения всех элементов матрицы на величину iMult

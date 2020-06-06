@@ -6,9 +6,10 @@ public:
 	int element(unsigned i, unsigned j) const override;
 	int& element(unsigned i, unsigned j) override;
 
-	Matrix2D() : MatrixBase(2) {};
+	Matrix2D() : MatrixBase(dimension) {};
 
 private:
-	int matrix[2][2];
+	static const int dimension = 2;
+	int matrix[dimension][dimension];
 };
 
