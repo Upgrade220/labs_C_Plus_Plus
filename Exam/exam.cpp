@@ -1,20 +1,47 @@
-﻿// exam.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
+﻿#include <iostream>
+#include "Point4D.h"
+#include "Vector4D.h"
 
-#include <iostream>
+using namespace std;
+
+void output (Point4D point1, Point4D point2, Vector4D vector1, Vector4D vector2)
+{
+	cout << "point1" << endl;
+	cout << point1 << endl;
+	cout << "point2" << endl;
+	cout << point2 << endl;
+	
+	cout << "vector1" << endl;
+	cout << vector1 << endl;
+	cout << "vector2" << endl;
+	cout << vector2 << endl;
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	Point4D point1(1,1,1,1);
+	Point4D point2(1,2,3,4);
+	Vector4D vector1(1,1,1,1);
+	Vector4D vector2(1,2,3,4);
+
+	setlocale(LC_ALL, "Russian");
+	std::cout.setf(std::ios::fixed);
+	std::cout.precision(2);
+	cout << "Исходные значения" << endl << endl;
+	output(point1, point2, vector1, vector2);
+	
+	point1 += point2;
+	point2 += vector1;
+	vector2 += vector1;
+
+	cout << "Сложение" << endl << endl;
+	output(point1, point2, vector1, vector2);
+
+	vector2 -= vector1;
+	point2 -= vector1;
+	point1 -= point2;
+
+	cout << "Вычитание" << endl << endl;
+	output(point1, point2, vector1, vector2);
+	return 0;
 }
-
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
